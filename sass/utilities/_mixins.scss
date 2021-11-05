@@ -90,7 +90,7 @@
                 white-space:pre-line;
             }
         }
-        img{
+        img,iframe{
             float: $imagePosition;
         }
     }
@@ -110,7 +110,7 @@
                 width: 100%;
                 padding: 144px 50px;
             }
-            img{
+            img,iframe{
                 width: 100%;
                 float: unset;
             }
@@ -120,7 +120,7 @@
     @media screen and (max-width:$sm) {
         .#{$sectionName}{
             .#{$sectionContent}{
-                padding: 50px 0;
+                padding: 50px 20px;
             }
         }   
     }
