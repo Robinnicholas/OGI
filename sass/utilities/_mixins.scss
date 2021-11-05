@@ -26,12 +26,16 @@
                     width: 100%;
                     padding: 25px 0 10px;
                     margin-bottom: 16px;
+                    color:#ffffff;
                     &::placeholder{
                         font-size: 15px;
                         line-height: 26px;
                         letter-spacing: 0.5px;
                         color: #ffffff;
                         font-family: "Proxima Nova";
+                    }
+                    &:focus{
+                        outline: none;
                     }
                 }
                 textarea{
@@ -41,12 +45,16 @@
                     border-left: none;
                     border-right: none;
                     width: 100%;
+                    color:#ffffff;
                     &::placeholder{
                         font-size: 15px;
                         line-height: 26px;
                         letter-spacing: 0.5px;
                         color: #ffffff;
                         font-family: "Proxima Nova";
+                    }
+                    &:focus{
+                        outline: none;
                     }
                 }
                 .btn{
@@ -61,6 +69,9 @@
                     position: absolute;
                     right: 0;
                     bottom: 15px;
+                    &:hover{
+                        cursor: pointer;
+                    }
                 }
             }
             h2{

@@ -50,6 +50,9 @@ header{
 
     .nav-items{
         margin: 0 25px;
+        &:last-child{
+            margin-right: 0;
+        }
         &.active{
             a{
                 color: #c71222;
