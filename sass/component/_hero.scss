@@ -1,0 +1,92 @@
+.hero{
+    max-height: 700px;
+    height: 100vh;
+    text-align: center;
+    .container{
+        height: 620px;
+        top: 80px;
+        position: relative;
+        .hero-content{
+            width: 100%;
+            padding: 0 20px;
+            position: absolute;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            h1{
+                font-size: 44px;
+                color:#141720;
+                letter-spacing: 1;
+                font-weight: 400;
+                margin-bottom: 10px;
+                font-family: "Proxima Nova";
+                &.ml2 {
+                    font-size: 2.75em;
+                }
+                  
+                &.ml2 .letter {
+                    display: inline-block;
+                    line-height: 1em;
+                }
+            }
+            p{
+                font-size: 25px;
+                color: #5d5f6f;
+                line-height: 60px;
+                letter-spacing: 0.5px;
+                font-weight: 400;
+                font-family: "Proxima Nova";
+                animation: zoomIn;
+                animation-duration: 1.5s;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:$md) {
+    .hero{
+        .container{
+            .hero-content{
+                h1{
+                    font-size: 32px;
+                    &.ml2 {
+                        font-size: 2em;
+                    }
+                      
+                    &.ml2 .letter {
+                        display: inline-block;
+                        line-height: 1em;
+                    }
+                }
+                p{
+                    font-size: 18px;
+                    line-height: 25px;
+                }
+            }
+        }
+    }   
+}
+
+@media screen and (max-width:$sm) {
+    .hero{
+        .container{
+            .hero-content{
+                h1{
+                    font-size: 24px;
+                    &.ml2 {
+                        font-size: 1.5em;
+                    }
+                      
+                    &.ml2 .letter {
+                        display: inline-block;
+                        line-height: 1em;
+                    }
+                }
+                p{
+                    font-size: 14px;
+                    line-height: 18px;
+                }
+            }
+        }
+    }   
+}
