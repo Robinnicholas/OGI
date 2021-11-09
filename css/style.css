@@ -216,8 +216,6 @@ header .burger:hover {
   position: relative;
 }
 .hero .container .hero-content {
-  width: 100%;
-  padding: 0 20px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -228,9 +226,8 @@ header .burger:hover {
   color: #141720;
   letter-spacing: 1;
   font-weight: 400;
-  margin: 0 auto;
   margin-bottom: 10px;
-  width: 18em;
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   font-family: "Proxima Nova";
@@ -245,15 +242,22 @@ header .burger:hover {
   font-size: 25px;
   color: #5d5f6f;
   line-height: 60px;
+  white-space: nowrap;
   letter-spacing: 0.5px;
   font-weight: 400;
   font-family: "Proxima Nova";
+  transform: scale(0);
+  animation: zoom 3s 4s forwards;
+}
+@keyframes zoom {
+  to {
+    transform: scale(1);
+  }
 }
 
 @media screen and (max-width: 768px) {
   .hero .container .hero-content h1 {
     font-size: 32px;
-    width: 18em;
   }
   .hero .container .hero-content p {
     font-size: 18px;
@@ -262,11 +266,10 @@ header .burger:hover {
 }
 @media screen and (max-width: 576px) {
   .hero .container .hero-content h1 {
-    font-size: 15px;
-    width: 18em;
+    font-size: 16px;
   }
   .hero .container .hero-content p {
-    font-size: 12px;
+    font-size: 10px;
     line-height: 18px;
   }
 }
@@ -715,19 +718,19 @@ header .burger:hover {
 }
 @keyframes slide {
   0% {
-    transform: translateX(200%);
+    transform: translateX(100%);
   }
-  10% {
+  45% {
     transform: translateX(0);
   }
   50% {
     transform: translateX(0);
   }
-  90% {
+  55% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(200%);
+    transform: translateX(100%);
   }
 }
 .services {
