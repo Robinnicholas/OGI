@@ -59,7 +59,7 @@ table {
 
 /* css reset end  */
 .container {
-  max-width: 1176px;
+  max-width: 1165px;
   padding: 0 20px;
   margin: 0 auto;
 }
@@ -228,15 +228,18 @@ header .burger:hover {
   color: #141720;
   letter-spacing: 1;
   font-weight: 400;
+  margin: 0 auto;
   margin-bottom: 10px;
+  width: 18em;
+  white-space: nowrap;
+  overflow: hidden;
   font-family: "Proxima Nova";
+  animation: type 4s steps(40, end);
 }
-.hero .container .hero-content h1.ml2 {
-  font-size: 2.75em;
-}
-.hero .container .hero-content h1.ml2 .letter {
-  display: inline-block;
-  line-height: 1em;
+@keyframes type {
+  from {
+    width: 0;
+  }
 }
 .hero .container .hero-content p {
   font-size: 25px;
@@ -245,20 +248,12 @@ header .burger:hover {
   letter-spacing: 0.5px;
   font-weight: 400;
   font-family: "Proxima Nova";
-  animation: zoomIn;
-  animation-duration: 1.5s;
 }
 
 @media screen and (max-width: 768px) {
   .hero .container .hero-content h1 {
     font-size: 32px;
-  }
-  .hero .container .hero-content h1.ml2 {
-    font-size: 2em;
-  }
-  .hero .container .hero-content h1.ml2 .letter {
-    display: inline-block;
-    line-height: 1em;
+    width: 18em;
   }
   .hero .container .hero-content p {
     font-size: 18px;
@@ -267,34 +262,29 @@ header .burger:hover {
 }
 @media screen and (max-width: 576px) {
   .hero .container .hero-content h1 {
-    font-size: 24px;
-  }
-  .hero .container .hero-content h1.ml2 {
-    font-size: 1.5em;
-  }
-  .hero .container .hero-content h1.ml2 .letter {
-    display: inline-block;
-    line-height: 1em;
+    font-size: 15px;
+    width: 18em;
   }
   .hero .container .hero-content p {
-    font-size: 14px;
+    font-size: 12px;
     line-height: 18px;
   }
 }
 .about-us {
   background-color: #141720;
   color: #ffffff;
-  position: relative;
-  overflow: auto;
+  overflow: hidden;
 }
-.about-us .about-content {
-  position: absolute;
-  background-color: #141720;
-  width: 50%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  padding: 144px 125px 0 152px;
+.about-us .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.about-us .container .wrapper {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 50%;
+  padding-right: 117px;
 }
 .about-us .about-content form {
   position: relative;
@@ -373,29 +363,22 @@ header .burger:hover {
   font-family: "Proxima Nova";
   white-space: pre-line;
 }
-.about-us img, .about-us iframe {
-  float: right;
-}
 
-@media screen and (max-width: 1200px) {
-  .about-us .about-content {
-    padding: 144px 50px;
+@media screen and (max-width: 992px) {
+  .about-us {
+    padding: 40px 0;
+    overflow: auto;
   }
-}
-@media screen and (max-width: 768px) {
-  .about-us .about-content {
-    position: unset;
+  .about-us .container {
+    flex-direction: column;
+  }
+  .about-us .container .wrapper {
     width: 100%;
-    padding: 144px 50px;
+    padding-right: 0;
+    margin-bottom: 40px;
   }
-  .about-us img, .about-us iframe {
+  .about-us .container img {
     width: 100%;
-    float: unset;
-  }
-}
-@media screen and (max-width: 576px) {
-  .about-us .about-content {
-    padding: 50px 20px;
   }
 }
 .our-story .container {
@@ -424,7 +407,6 @@ header .burger:hover {
   right: -15px;
   background-color: #d4d4d4;
   z-index: -2;
-  transition: 1.5s;
 }
 .our-story .container .progress ul.ready:first-child::before {
   content: "";
@@ -436,26 +418,26 @@ header .burger:hover {
   right: -15px;
   background-color: #c71222;
   z-index: -1;
-  transition: 2s;
+  transition: 5s;
 }
 .our-story .container .progress ul.started + ul li:first-child .event::before {
   border: 4px solid #d4d4d4;
   animation-name: circle;
-  animation-duration: 0.15s;
-  animation-delay: 1s;
+  animation-duration: 0.5s;
+  animation-delay: 3s;
   animation-fill-mode: forwards;
 }
 .our-story .container .progress ul.started:first-child::before {
   content: "";
   display: block;
   width: 4px;
-  height: 40%;
+  height: 41%;
   position: absolute;
   top: -20%;
   right: -15px;
   background-color: #c71222;
   z-index: -1;
-  transition: 1.5s;
+  transition: 5s;
 }
 .our-story .container .progress ul.event-one + ul li:nth-child(1) .event::before {
   border: 4px solid #c71222;
@@ -463,8 +445,8 @@ header .burger:hover {
 .our-story .container .progress ul.event-one + ul li:nth-child(2) .event::before {
   border: 4px solid #d4d4d4;
   animation-name: circle;
-  animation-duration: 0.15s;
-  animation-delay: 1s;
+  animation-duration: 0.5s;
+  animation-delay: 3s;
   animation-fill-mode: forwards;
 }
 .our-story .container .progress ul.event-one:first-child::before {
@@ -477,7 +459,7 @@ header .burger:hover {
   right: -15px;
   background-color: #c71222;
   z-index: -1;
-  transition: 1.5s;
+  transition: 5s;
 }
 .our-story .container .progress ul.event-two + ul li:nth-child(1) .event::before {
   border: 4px solid #c71222;
@@ -488,8 +470,8 @@ header .burger:hover {
 .our-story .container .progress ul.event-two + ul li:nth-child(3) .event::before {
   border: 4px solid #d4d4d4;
   animation-name: circle;
-  animation-duration: 0.15s;
-  animation-delay: 1s;
+  animation-duration: 0.5s;
+  animation-delay: 3s;
   animation-fill-mode: forwards;
 }
 .our-story .container .progress ul.event-two:first-child::before {
@@ -502,7 +484,7 @@ header .burger:hover {
   right: -15px;
   background-color: #c71222;
   z-index: -1;
-  transition: 1.5s;
+  transition: 5s;
 }
 .our-story .container .progress ul.ended + ul li:nth-child(1) .event::before {
   border: 4px solid #c71222;
@@ -516,8 +498,8 @@ header .burger:hover {
 .our-story .container .progress ul.ended + ul li:nth-child(4) .event::before {
   border: 4px solid #d4d4d4;
   animation-name: circle;
-  animation-duration: 0.15s;
-  animation-delay: 1s;
+  animation-duration: 0.5s;
+  animation-delay: 3s;
   animation-fill-mode: forwards;
 }
 .our-story .container .progress ul.ended:first-child::before {
@@ -530,7 +512,7 @@ header .burger:hover {
   right: -15px;
   background-color: #c71222;
   z-index: -1;
-  transition: 1.5s;
+  transition: 5s;
 }
 .our-story .container .progress ul li {
   line-height: 20px;
@@ -567,8 +549,7 @@ header .burger:hover {
 }
 .our-story .container .col-right.ready .story-content .ready {
   display: block;
-  animation: fadeInRight;
-  animation-duration: 1.5s;
+  animation: slide 5s;
 }
 .our-story .container .col-right.ready .story-content .started {
   display: none;
@@ -587,8 +568,7 @@ header .burger:hover {
 }
 .our-story .container .col-right.started .story-content .started {
   display: block;
-  animation: fadeInRight;
-  animation-duration: 1.5s;
+  animation: slide 5s;
 }
 .our-story .container .col-right.started .story-content .ready {
   display: none;
@@ -607,8 +587,7 @@ header .burger:hover {
 }
 .our-story .container .col-right.event-one .story-content .event-one {
   display: block;
-  animation: fadeInRight;
-  animation-duration: 1.5s;
+  animation: slide 5s;
 }
 .our-story .container .col-right.event-one .story-content .ready {
   display: none;
@@ -627,8 +606,7 @@ header .burger:hover {
 }
 .our-story .container .col-right.event-two .story-content .event-two {
   display: block;
-  animation: fadeInRight;
-  animation-duration: 1.5s;
+  animation: slide 5s;
 }
 .our-story .container .col-right.event-two .story-content .ready {
   display: none;
@@ -647,8 +625,7 @@ header .burger:hover {
 }
 .our-story .container .col-right.ended .story-content .ended {
   display: block;
-  animation: fadeInRight;
-  animation-duration: 1.5s;
+  animation: slide 5s;
 }
 .our-story .container .col-right.ended .story-content .ready {
   display: none;
@@ -736,6 +713,23 @@ header .burger:hover {
     border: 4px solid #c71222;
   }
 }
+@keyframes slide {
+  0% {
+    transform: translateX(200%);
+  }
+  10% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  90% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
 .services {
   padding: 140px 0;
   background-color: #efefef;
@@ -750,10 +744,15 @@ header .burger:hover {
   text-align: center;
   margin-bottom: 80px;
 }
+.services ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .services ul li {
-  display: inline-block;
-  width: 33%;
+  width: 33.3333333333%;
   margin-bottom: 70px;
+  padding-right: 22px;
 }
 .services ul li:nth-last-child(-n+3) {
   margin-bottom: 0;
@@ -773,7 +772,6 @@ header .burger:hover {
   letter-spacing: 0.5px;
   font-weight: 400;
   color: #5d5f65;
-  padding-right: 22px;
 }
 
 @media screen and (max-width: 992px) {
@@ -811,17 +809,18 @@ header .burger:hover {
 .hiring {
   background-color: #141720;
   color: #ffffff;
-  position: relative;
-  overflow: auto;
+  overflow: hidden;
 }
-.hiring .hiring-content {
-  position: absolute;
-  background-color: #141720;
-  width: 50%;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  padding: 144px 125px 0 152px;
+.hiring .container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+.hiring .container .wrapper {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 50%;
+  padding-left: 117px;
 }
 .hiring .hiring-content form {
   position: relative;
@@ -900,45 +899,39 @@ header .burger:hover {
   font-family: "Proxima Nova";
   white-space: pre-line;
 }
-.hiring img, .hiring iframe {
-  float: left;
-}
 
-@media screen and (max-width: 1200px) {
-  .hiring .hiring-content {
-    padding: 144px 50px;
+@media screen and (max-width: 992px) {
+  .hiring {
+    padding: 40px 0;
+    overflow: auto;
   }
-}
-@media screen and (max-width: 768px) {
-  .hiring .hiring-content {
-    position: unset;
+  .hiring .container {
+    flex-direction: column;
+  }
+  .hiring .container .wrapper {
     width: 100%;
-    padding: 144px 50px;
+    padding-left: 0;
+    margin-bottom: 40px;
   }
-  .hiring img, .hiring iframe {
+  .hiring .container img {
     width: 100%;
-    float: unset;
-  }
-}
-@media screen and (max-width: 576px) {
-  .hiring .hiring-content {
-    padding: 50px 20px;
   }
 }
 .contact {
   background-color: #141720;
   color: #ffffff;
-  position: relative;
-  overflow: auto;
+  overflow: hidden;
 }
-.contact .contact-form {
-  position: absolute;
-  background-color: #141720;
-  width: 50%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  padding: 144px 125px 0 152px;
+.contact .container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.contact .container .wrapper {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 50%;
+  padding-right: 117px;
 }
 .contact .contact-form form {
   position: relative;
@@ -1017,29 +1010,22 @@ header .burger:hover {
   font-family: "Proxima Nova";
   white-space: pre-line;
 }
-.contact img, .contact iframe {
-  float: right;
-}
 
-@media screen and (max-width: 1200px) {
-  .contact .contact-form {
-    padding: 144px 50px;
+@media screen and (max-width: 992px) {
+  .contact {
+    padding: 40px 0;
+    overflow: auto;
   }
-}
-@media screen and (max-width: 768px) {
-  .contact .contact-form {
-    position: unset;
+  .contact .container {
+    flex-direction: column;
+  }
+  .contact .container .wrapper {
     width: 100%;
-    padding: 144px 50px;
+    padding-right: 0;
+    margin-bottom: 40px;
   }
-  .contact img, .contact iframe {
+  .contact .container img {
     width: 100%;
-    float: unset;
-  }
-}
-@media screen and (max-width: 576px) {
-  .contact .contact-form {
-    padding: 50px 20px;
   }
 }
 /*# sourceMappingURL=style.css.map */
