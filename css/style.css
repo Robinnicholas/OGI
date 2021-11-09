@@ -64,6 +64,59 @@ table {
   margin: 0 auto;
 }
 
+@keyframes circle {
+  0% {
+    border-top-color: #d4d4d4;
+    border-right-color: #d4d4d4;
+    border-bottom-color: #d4d4d4;
+    border-left-color: #d4d4d4;
+  }
+  25% {
+    border: 4px solid #c71222;
+    border-top-color: #d4d4d4;
+    border-bottom-color: #d4d4d4;
+    border-left-color: #d4d4d4;
+  }
+  50% {
+    border: 4px solid #c71222;
+    border-top-color: #d4d4d4;
+    border-left-color: #d4d4d4;
+  }
+  75% {
+    border: 4px solid #c71222;
+    border-top-color: #d4d4d4;
+  }
+  100% {
+    border: 4px solid #c71222;
+  }
+}
+@keyframes slide {
+  0% {
+    transform: translateX(100%);
+  }
+  35% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  65% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes zoom {
+  to {
+    transform: scale(1);
+  }
+}
+@keyframes type {
+  from {
+    width: 0;
+  }
+}
 header {
   position: fixed;
   top: 0;
@@ -233,11 +286,6 @@ header .burger:hover {
   font-family: "Proxima Nova";
   animation: type 4s steps(40, end);
 }
-@keyframes type {
-  from {
-    width: 0;
-  }
-}
 .hero .container .hero-content p {
   font-size: 25px;
   color: #5d5f6f;
@@ -248,11 +296,6 @@ header .burger:hover {
   font-family: "Proxima Nova";
   transform: scale(0);
   animation: zoom 3s 4s forwards;
-}
-@keyframes zoom {
-  to {
-    transform: scale(1);
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -688,49 +731,6 @@ header .burger:hover {
 @media screen and (max-width: 768px) {
   .our-story .container [class*=col] {
     width: 100%;
-  }
-}
-@keyframes circle {
-  0% {
-    border-top-color: #d4d4d4;
-    border-right-color: #d4d4d4;
-    border-bottom-color: #d4d4d4;
-    border-left-color: #d4d4d4;
-  }
-  25% {
-    border: 4px solid #c71222;
-    border-top-color: #d4d4d4;
-    border-bottom-color: #d4d4d4;
-    border-left-color: #d4d4d4;
-  }
-  50% {
-    border: 4px solid #c71222;
-    border-top-color: #d4d4d4;
-    border-left-color: #d4d4d4;
-  }
-  75% {
-    border: 4px solid #c71222;
-    border-top-color: #d4d4d4;
-  }
-  100% {
-    border: 4px solid #c71222;
-  }
-}
-@keyframes slide {
-  0% {
-    transform: translateX(100%);
-  }
-  45% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(0);
-  }
-  55% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(100%);
   }
 }
 .services {
