@@ -1,13 +1,8 @@
 .services{
     padding: 140px 0;
-    background-color: #efefef;
-    font-family: "Proxima Nova";
+    background-color: $color-grey-lighter;
     h2{
-        font-size: 28px;
-        line-height: 26px;
-        letter-spacing: 1px;
-        color: #2b2b2b;
-        font-weight: 400;
+        color: $secondary-light;
         text-align: center;
         margin-bottom: 80px;
     }
@@ -29,14 +24,10 @@
                 margin-bottom: 16px;
                 font-size: 20px;
                 line-height: 26px;
-                color: #141720;
+                color: $secondary;
             }
             p{
-                font-size: 15px;
-                line-height: 26px;
-                letter-spacing: 0.5px;
-                font-weight: 400;
-                color: #5d5f65;
+                color:$color-grey;
             }
         }
     }

@@ -11,18 +11,18 @@ header{
     z-index: 1;
     &.add-bg{
         transition: .5s;
-        background-color: #141720;
+        background-color: $secondary;
         .logo{
             transition: .5s;
-            color: #ffffff;
+            color: $primary;
         }
         .nav-items.active a{
-            color: #ce4551;
+            color: $color-pink;
         }
         .nav-items a{
-            color: #ffffff;
+            color: $primary;
             &:hover{
-                color: #ce4551;
+                color: $color-pink;
             }
         }
         .burger{
@@ -31,17 +31,16 @@ header{
             }
             div{
                 transition: .5s;
-                background-color: #ffffff;
+                background-color: $primary;
             }
         }
     }
     .logo {
         transition: .5s;
-        color: #141720;
+        color: $secondary;
         font-size: 20px;
         font-weight: 400;
         display: inline-block;
-        font-family: "Proxima Nova";
     }
 
     .nav-links{
@@ -55,7 +54,7 @@ header{
         }
         &.active{
             a{
-                color: #c71222;
+                color: $color-pink;
             }
         }
     }
@@ -64,11 +63,10 @@ header{
         font-size: 16px;
         font-weight: 400;
         letter-spacing: 0.5px;
-        color: #5d5f65;
+        color: $color-grey;
         &:hover{
-            color: #c71222;
+            color: $color-pink;
         }
-        font-family: "Proxima Nova";    
     }
 
     .burger{
@@ -86,7 +84,7 @@ header{
             position: absolute;
             top: 0;
             right: 0;
-            background-color: #c71222;
+            background-color: $color-pink;
             height: 100vh;
             width: 320px;
             transform: translateX(100%);
@@ -96,9 +94,9 @@ header{
             padding-top: 75px;
             .nav-items{
                 a{
-                    color: #ffffff;
+                    color: $primary;
                     &:hover{
-                        color: #141720;
+                        color: $secondary;
                     }
                 }
                 margin: 20px 22px;
@@ -127,7 +125,7 @@ header{
                 }
                 & + .burger{
                     div{
-                        background-color: #ffffff;
+                        background-color: $primary;
                     }
                 }
             }
@@ -148,7 +146,7 @@ header{
             div{
                 width: 25px;
                 height: 3px;
-                background-color: #141720;
+                background-color: $secondary;
                 margin: 5px;
             }
         }

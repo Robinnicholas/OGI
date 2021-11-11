@@ -1,113 +1,46 @@
-@mixin sectionComponent($sectionName,$sectionContent,$flexDirection,$flexDirection-lg,$paddingPosition) {
-    .#{$sectionName}{
-        background-color: #141720;
-        color: #ffffff;
-        overflow: hidden;
+@mixin sectionComponent($flexDirection,$flexDirection-lg) {
+    .section-bg{
+        background-color: $secondary;
         .container{
             display: flex;
             flex-direction: $flexDirection;
             align-items: center;
             .wrapper{
-                flex-grow: 0;
-                flex-shrink: 0;
                 flex-basis: 50%;
-                padding-#{$paddingPosition}: 117px;
-            }
-        }
-        .#{$sectionContent}{
-            form{
-                position: relative;
-                *{
-                    display: block;
+                flex-shrink: 0;
+                &.pl{
+                    padding-left: 117px;
                 }
-                input{
-                    background-color: transparent;
-                    border: 2px solid #ffffff;
-                    border-top: none;
-                    border-left: none;
-                    border-right: none;
-                    width: 100%;
-                    padding: 25px 0 10px;
-                    margin-bottom: 16px;
-                    color:#ffffff;
-                    &::placeholder{
-                        font-size: 15px;
-                        line-height: 26px;
-                        letter-spacing: 0.5px;
-                        color: #ffffff;
-                        font-family: "Proxima Nova";
-                    }
-                    &:focus{
-                        outline: none;
-                    }
-                }
-                textarea{
-                    background-color: transparent;
-                    border: 2px solid #ffffff;
-                    border-top: none;
-                    border-left: none;
-                    border-right: none;
-                    width: 100%;
-                    color:#ffffff;
-                    &::placeholder{
-                        font-size: 15px;
-                        line-height: 26px;
-                        letter-spacing: 0.5px;
-                        color: #ffffff;
-                        font-family: "Proxima Nova";
-                    }
-                    &:focus{
-                        outline: none;
-                    }
-                }
-                .btn{
-                    font-size: 15px;
-                    line-height: 26px;
-                    letter-spacing: 0.19px;
-                    color: #ffffff;
-                    padding: 10px 46px;
-                    border: none;
-                    background-color: #c71222;
-                    border-radius: 25px;
-                    position: absolute;
-                    right: 0;
-                    bottom: 15px;
-                    &:hover{
-                        cursor: pointer;
-                    }
+                &.pr{
+                    padding-right: 117px;
                 }
             }
-            h2{
-                font-size: 28px;
-                font-weight: 400;
-                line-height: 26px;
-                letter-spacing: 1px;
-                margin-bottom: 55px;
-                font-family: "Proxima Nova";
-            }
-            p{
-                font-size: 15px;
-                line-height: 26px;
-                letter-spacing: 0.5px;
-                font-family: "Proxima Nova";
-                white-space:pre-line;
+            img{
+                width: 50%;
+                object-fit: cover;
             }
         }
     }
 
     @media screen and (max-width:$lg) {
-        .#{$sectionName}{
+        .section-bg{
             padding: 40px 0;
-            overflow: auto;
             .container{
                 flex-direction: $flexDirection-lg;
                 .wrapper{
                     width: 100%;
-                    padding-#{$paddingPosition}: 0;
-                    margin-bottom: 40px;
+                    &.pr{
+                        padding-right: 0;
+                        margin-bottom: 40px;
+                    }
+                    &.pl{
+                        padding-left: 0;
+                        margin-top: 40px;
+                    }
                 }
                 img{
                     width: 100%;
+                    height: auto;
                 }
             }
         }

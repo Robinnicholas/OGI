@@ -1,0 +1,68 @@
+%btn{
+    font-size: 15px;
+    line-height: 26px;
+    letter-spacing: 0.19px;
+    color: #ffffff;
+    padding: 10px 46px;
+    border: none;
+    background-color: #c71222;
+    border-radius: 25px;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+form{
+    position: relative;
+    *{
+        display: block;
+    }
+    input{
+        background-color: transparent;
+        border: 2px solid #ffffff;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        width: 100%;
+        padding: 25px 0 10px;
+        margin-bottom: 16px;
+        color:#ffffff;
+        &::placeholder{
+            font-size: 15px;
+            line-height: 26px;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            font-family: "Proxima Nova";
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+    textarea{
+        background-color: transparent;
+        border: 2px solid #ffffff;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        width: 100%;
+        color:#ffffff;
+        resize: vertical;
+        max-height: 320px;
+        &::placeholder{
+            font-size: 15px;
+            line-height: 26px;
+            letter-spacing: 0.5px;
+            color: #ffffff;
+            font-family: "Proxima Nova";
+        }
+        &:focus{
+            outline: none;
+        }
+    }
+    button{
+        @extend %btn;
+        position: absolute;
+        right: 0;
+        bottom: 15px;    
+    }
+}
