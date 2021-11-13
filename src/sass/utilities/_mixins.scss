@@ -1,47 +1,21 @@
 @mixin sectionComponent($flexDirection,$flexDirection-lg) {
     .section-bg{
         background-color: $secondary;
-        .container{
+        .row{
             display: flex;
             flex-direction: $flexDirection;
             align-items: center;
-            .wrapper{
-                flex-basis: 50%;
-                flex-shrink: 0;
-                &.pl{
-                    padding-left: 117px;
-                }
-                &.pr{
-                    padding-right: 117px;
+            @media screen and (max-width:$lg) {
+                &{
+                    flex-direction: $flexDirection-lg;
+                    gap: 40px;
                 }
             }
-            img{
-                width: 50%;
-                object-fit: cover;
-            }
+            @extend %contents;
         }
-    }
-
-    @media screen and (max-width:$lg) {
-        .section-bg{
-            padding: 40px 0;
-            .container{
-                flex-direction: $flexDirection-lg;
-                .wrapper{
-                    width: 100%;
-                    &.pr{
-                        padding-right: 0;
-                        margin-bottom: 40px;
-                    }
-                    &.pl{
-                        padding-left: 0;
-                        margin-top: 40px;
-                    }
-                }
-                img{
-                    width: 100%;
-                    height: auto;
-                }
+        @media screen and (max-width:$lg) {
+            &{
+               padding: 40px 0;
             }
         }
     }

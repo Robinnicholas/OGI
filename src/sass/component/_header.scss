@@ -1,4 +1,4 @@
-header{
+.nav-bar {
     position: fixed;
     top: 0;
     left: 0;
@@ -7,47 +7,31 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 30px 20px;
-    transition: .5s;
+    transition: all 0.5s ease-out;
     z-index: 1;
-    &.add-bg{
-        transition: .5s;
-        background-color: $secondary;
-        .logo{
-            transition: .5s;
-            color: $primary;
-        }
-        .nav-items.active a{
-            color: $color-pink;
-        }
-        .nav-items a{
-            color: $primary;
-            &:hover{
-                color: $color-pink;
-            }
-        }
-        .burger{
-            &:hover{
-                cursor: pointer;
-            }
-            div{
-                transition: .5s;
-                background-color: $primary;
-            }
-        }
-    }
     .logo {
-        transition: .5s;
         color: $secondary;
         font-size: 20px;
         font-weight: 400;
         display: inline-block;
     }
-
-    .nav-links{
+    &__links {
         display: flex;
+        @media screen and (max-width : $md){
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: $color-pink;
+            height: 100vh;
+            width: 320px;
+            transform: translateX(100%);
+            flex-direction: column;
+            align-items: center;
+            padding-top: 75px;
+            transition: all 0.5s ease-out;
+        }
     }
-
-    .nav-items{
+    &__items {
         margin: 0 25px;
         &:last-child{
             margin-right: 0;
@@ -57,98 +41,114 @@ header{
                 color: $color-pink;
             }
         }
-    }
-
-    .nav-items a{
-        font-size: 16px;
-        font-weight: 400;
-        letter-spacing: 0.5px;
-        color: $color-grey;
-        &:hover{
-            color: $color-pink;
+        a{
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            color: $color-grey;
+            &:hover{
+                color: $color-pink;
+            }
+        }
+        @media screen and (max-width : $md){
+            a{
+                color: $primary;
+                &:hover{
+                    color: $secondary;
+                }
+            }
+            &.active{
+                a{
+                    color: $secondary;
+                }
+            }
+            margin: 20px 22px;
         }
     }
-
     .burger{
         display: none;
-        &:hover{
+        @media screen and (max-width : $md){
+            display: block;    
             cursor: pointer;
+            caret-color: transparent;
+            .line1{
+                display: block;
+                transition: all 0.5s ease-out;
+            }        
+            .line2{
+                transform: rotate(0deg);
+                transition: all 0.5s ease-out;
+            }
+            .line3{
+                transform: rotate(0deg);
+                transition: all 0.5s ease-out;
+            }
         }
     }
-}
-
-
-@media screen and (max-width : $md){
-    header{
-        ul.nav-links{
-            position: absolute;
-            top: 0;
-            right: 0;
-            background-color: $color-pink;
-            height: 100vh;
-            width: 320px;
-            transform: translateX(100%);
-            transition: .5s ease-out ;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 75px;
-            .nav-items{
+    &.add-bg{
+        background-color: $secondary;
+        .logo{
+            color: $primary;
+        }
+        .nav-bar__items{
+            a{
+                color: $primary;
+                &:hover{
+                    color: $color-pink;
+                }
+            }
+            &.active{
                 a{
-                    color: $primary;
+                    color: $color-pink;
+                }
+            }
+        }
+        @media screen and (max-width : $md){
+            [class*="line"]{
+                background-color: $primary;
+            }
+            .nav-bar__items{
+                &.active{
+                    a{
+                        color: $secondary;
+                    }
+                }
+                a{
                     &:hover{
                         color: $secondary;
                     }
                 }
-                margin: 20px 22px;
-                &:first-child::before{
-                    bottom:-10px
-                }
-                &:last-child{
-                    margin-right: 22px;
-                }
-            }
-            &.show-on-mobile{
-                transform: translate(0) !important;
-                transition: .5s ease-out ;
-                + .burger{    
-                    .line1{
-                        visibility: hidden;
-                    }
-                    .line2{
-                        transform: rotate(45deg);
-                        transition: .5s;
-                    }
-                    .line3{
-                        transform: rotate(315deg) translate(5px,-6px);
-                        transition: .5s;
-                    }
-                }
-                & + .burger{
-                    div{
-                        background-color: $primary;
-                    }
-                }
             }
         }
-        .burger{
-            display: block;    
-            .line1{
-                display: block;
-            }        
-            .line2{
-                transform: rotate(0deg);
-                transition: .5s;
+    }
+    @media screen and (max-width : $md){
+        &.show-on-mobile{
+            .nav-bar__links{
+                transform: translate(0);
             }
-            .line3{
-                transform: rotate(0deg);
-                transition: .5s;
+            .burger{    
+                .line1{
+                    visibility: hidden;
+                    transition: all 0.5s ease-out;
+                }
+                .line2{
+                    transform: rotate(45deg);
+                    transition: all 0.5s ease-out;
+                }
+                .line3{
+                    transform: rotate(315deg) translate(5px,-6px);
+                    transition: all 0.5s ease-out;
+                }
             }
-            div{
-                width: 25px;
-                height: 3px;
-                background-color: $secondary;
-                margin: 5px;
+            [class*="line"]{
+                background-color: $primary;
             }
         }
-    }    
+        [class*="line"]{
+            width: 25px;
+            height: 3px;
+            background-color: $secondary;
+            margin: 5px;
+        }
+    }
 }

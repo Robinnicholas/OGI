@@ -1,0 +1,26 @@
+%mini-container{
+    max-width: 490px;
+    width: 490px;
+    margin: 0 auto;
+    padding: 0 20px;
+    @media screen and (max-width:$lg) {
+        max-width: 100%;
+        width: 100%;
+        padding: 0 20px;
+    }
+}
+
+%contents{
+    .wrapper{
+        @extend %mini-container;
+    }
+    .section--img{
+        width: 50%;
+        object-fit: cover;
+    }
+    @media screen and (max-width:$lg) {
+        .section--img{
+            width: 100%;
+        }
+    }
+}

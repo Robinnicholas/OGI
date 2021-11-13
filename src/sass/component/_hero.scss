@@ -1,62 +1,43 @@
 .hero{
     max-height: 700px;
     height: 100vh;
-    text-align: center;
     .container{
         height: 620px;
         top: 80px;
         position: relative;
-        .hero-content{
-            position: absolute;
-            top:50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            h1{
-                width: 100%;
-                white-space: nowrap;
-                overflow: hidden;
-                animation: type 4s steps(250, end);
+    }
+    .hero-content{
+        text-align: center;
+        position: relative;
+        top:50%;
+        transform: translateY(-50%);
+        h1{
+            @media screen and (max-width:$md) {
+                font-size: 32px;
             }
-            
-            p{
-                line-height: 60px;
-                white-space: nowrap;
-                transform: scale(0);
-                animation: zoom 3s 4s forwards;            
+            @media screen and (max-width:$sm) {
+                font-size: 20px;
+                line-height: 24px;
             }
-            
+        }
+        span{
+            opacity: 0;
+            transition: all 1s ease;
+            &.fade{
+                opacity: 1;
+            }
+        }
+        p{
+            animation: zoom 3s 3s forwards;
+            transform: scale(0);
+            line-height: 60px;
+            @media screen and (max-width:$md) {
+                font-size: 18px;
+            }
+            @media screen and (max-width:$sm) {
+                font-size: 14px;
+                line-height: 14px;
+            }
         }
     }
-}
-
-@media screen and (max-width:$md) {
-    .hero{
-        .container{
-            .hero-content{
-                h1{
-                    font-size: 32px;
-                }
-                p{
-                    font-size: 18px;
-                    line-height: 25px;
-                }
-            }
-        }
-    }   
-}
-
-@media screen and (max-width:$sm) {
-    .hero{
-        .container{
-            .hero-content{
-                h1{
-                    font-size: 16px;
-                }
-                p{
-                    font-size: 10px;
-                    line-height: 18px;
-                }
-            }
-        }
-    }   
 }

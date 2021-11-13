@@ -1,7 +1,30 @@
+function textAnimation(){
+    const text = document.querySelector('.fancy');
+    const strText = text.textContent;
+    const splitText = strText.split('');
+    text.textContent = ""
+    
+    for(let value of splitText){
+        text.innerHTML += `<span>${value}</span>`; 
+    }
+
+    let char = 0;
+    let timer = setInterval(() => {
+        const span = document.querySelectorAll('.hero-content span')[char];
+        span.classList.add("fade");
+        char++;
+        if(char === splitText.length){
+            clearInterval(timer);
+            timer = null;
+        }
+    }, 100);
+}
+
+
 function navigation(){
     const burgerMenu = document.querySelector('.burger');
     burgerMenu.addEventListener('click', () => {
-        let nav = document.querySelector('.nav-links');
+        let nav = document.querySelector('.nav-bar');
         return nav.classList.toggle("show-on-mobile");
     })
 }
@@ -47,5 +70,6 @@ function progress(){
 window.addEventListener('load', () => {
     navigation();
     headerScroll();
-    progress()
+    progress();
+    textAnimation();
 })

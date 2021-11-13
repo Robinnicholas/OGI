@@ -48,6 +48,7 @@ form{
         color:#ffffff;
         resize: vertical;
         max-height: 320px;
+        min-height: 120px;
         &::placeholder{
             font-size: 15px;
             line-height: 26px;
