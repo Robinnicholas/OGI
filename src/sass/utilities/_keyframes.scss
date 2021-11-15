@@ -1,45 +1,47 @@
 @keyframes circle{
     0%{
-        border-top-color:#d4d4d4;
-        border-right-color:#d4d4d4;
-        border-bottom-color:#d4d4d4;
-        border-left-color:#d4d4d4;  
+        border:4px solid grey;
+        transform: rotate(-180deg);
     }
     25%{
-      border:4px solid #c71222;
-      border-top-color:#d4d4d4;
-      border-bottom-color:#d4d4d4;
-      border-left-color:#d4d4d4;
+        border-left: 4px solid grey;
+        border-right: 4px solid grey;
+        border-top: 4px solid #c71122;
+        border-bottom: 4px solid grey;
     }
     50%{
-      border:4px solid #c71222;
-      border-top-color:#d4d4d4;
-      border-left-color:#d4d4d4;
+        border-left: 4px solid grey;
+        border-right: 4px solid #c71122;
+        border-top: 4px solid #c71122;
+        border-bottom: 4px solid grey;
     }
     75%{
-      border:4px solid #c71222;
-      border-top-color:#d4d4d4;
+        border-left: 4px solid grey;
+        border-right: 4px solid #c71122;
+        border-top: 4px solid #c71122;
+        border-bottom: 4px solid #c71122;
     }
     100%{
-      border:4px solid #c71222;
+        border:4px solid #c71122;
+        transform: rotate(180deg);
     }
 }
 
 @keyframes slide{
     0%{
-        transform:translateX(100%);
+        transform:translateX(200%);
     }
-    35%{
+    10%{
         transform:translateX(0);
     }
     50%{
         transform:translateX(0);
     }
-    65%{
+    90%{
         transform:translateX(0);
     }
     100%{
-    transform:translateX(100%);
+        transform:translateX(200%);
     }
 }
 
