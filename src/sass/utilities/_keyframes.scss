@@ -50,3 +50,12 @@
         transform: scale(1);
     } 
 }
+
+[data-src]{
+    opacity: 0;
+}
+
+.fadein{
+    opacity: 1;
+    transition: all 1s ease-in;
+}

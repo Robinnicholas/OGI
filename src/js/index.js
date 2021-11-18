@@ -1,3 +1,23 @@
+function lazyload(){
+    const targets = document.querySelectorAll('img');
+    
+    const io = new IntersectionObserver((entires, observer) => {
+        entires.forEach(entry => {
+            if(!entry.isIntersecting){
+                return;
+            }
+            const src = entry.target.getAttribute('data-src');
+            entry.target.setAttribute("src", src);
+            entry.target.classList.add('fadein');
+            observer.unobserve(entry.target);
+        });
+    });
+
+    targets.forEach(target => {
+        io.observe(target);
+    });
+}
+
 function textAnimation(){
     const text = document.querySelector('.fancy');
     const strText = text.textContent;
@@ -72,4 +92,5 @@ window.addEventListener('load', () => {
     headerScroll();
     progress();
     textAnimation();
+    lazyload();
 })

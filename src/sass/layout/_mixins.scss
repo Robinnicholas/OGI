@@ -1,0 +1,30 @@
+@mixin layouts ($img-position){
+    .section-bg {
+        @extend %section-bg;
+        [class^="bg-img"],iframe{
+            position: absolute;
+            top: 0;
+            width: 50%;
+            min-height: 700px;
+            @media screen and (max-width:$xl) {
+                position: initial;
+                width: 100%;
+                background-size:cover;
+                background-position: center;
+            }
+        }
+        .row{
+            @extend %row;
+            .col-pos-#{$img-position}{
+                margin-#{$img-position}: 60%;
+                width: 75%;
+                @media screen and (max-width:$xl) {
+                    &{
+                        margin-#{$img-position}: 0;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }    
+}

@@ -1,19 +1,9 @@
-h1{
-    font-size: 44px;
-    color:$secondary;
-    letter-spacing: 1;
-    font-weight: 400;
-    margin-bottom: 10px;
+@font-face {
+    font-family: Proxima Nova;
+	src: url("//db.onlinewebfonts.com/t/0376a58122a881d16a294512d3c947b1.woff2") 
+		format("woff2"),
 }
-
-.hero-description{
-    font-size: 25px;
-    color: $color-grey;
-    letter-spacing: 0.5px;
-    font-weight: 400;
-}
-
-h2{
+.sub-heading{
     font-size: 28px;
     font-weight: 400;
     line-height: 26px;
@@ -21,7 +11,7 @@ h2{
     margin-bottom: 55px;
 }
 
-p{
+.content{
     font-size: 15px;
     line-height: 26px;
     letter-spacing: 0.5px;
@@ -29,17 +19,17 @@ p{
 }
 
 .section-heading{
-    color: $primary;
+    color: $color-white;
 }
 
 .section-description{
-    color: $primary;
+    color: $color-white;
 }
 
 .story-heading{
-    color: $secondary-light;
+    color: $primary-light;
 }
 
 .story-description{
-    color: $color-grey;
+    color: $color-grey-darker;
 }

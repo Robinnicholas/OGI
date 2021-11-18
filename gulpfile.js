@@ -6,19 +6,23 @@ const sourcemaps = require('gulp-sourcemaps');
 const autoprefixer = require('gulp-autoprefixer');
 const image = require('gulp-image');
 const htmlmin = require('gulp-htmlmin');
+const webp =  require('gulp-webp');
 const { watch, series, parallel } = require('gulp');
 
 function imageOpti(cb){
-    gulp.src('./src/images/*')
-        .pipe(image())
-        .pipe(gulp.dest('./dist/images'));
+    gulp.src('src/images/*')
+        .pipe(webp())                                   // webp conversion
+        .pipe(image())                                  // img optimization
+        .pipe(gulp.dest('dist/images'));
     cb();
 }
 
+exports.webpc =  imageOpti;
+
 function htmlMin(cb){
-    gulp.src('./src/*.html')
+    gulp.src('src/*.html')
         .pipe(htmlmin({ collapseWhitespace: true }))
-        .pipe(gulp.dest('./dist'));
+        .pipe(gulp.dest('dist'));
     cb();
 }
 
@@ -30,7 +34,7 @@ function cssTasks(cb){
     .pipe(autoprefixer({                        // autoprefixer
         cascade: false
     }))
-    .pipe(sourcemaps.write('./'))               // sourcemap write
+    .pipe(sourcemaps.write(''))               // sourcemap write
     .pipe(gulp.dest('dist/css/'));
     cb();
 }
@@ -38,22 +42,19 @@ function cssTasks(cb){
 exports.cssCompile = cssTasks;
 
 function minifyJs(cb){
-    gulp.src('./src/js/*.js')
+    gulp.src('src/js/*.js')
         .pipe(uglify())
-        .pipe(gulp.dest('./dist/js'));
+        .pipe(gulp.dest('dist/js'));
     cb();
 }
 
 function defaultTask(cb) {
-    watch('./src/*.html' , htmlMin);
-    watch('./src/sass/**/*.scss' , cssTasks);
-    watch('./src/js/*.js' , minifyJs);   
-    watch('./src/images/*' , imageOpti);   
+    watch('src/*.html' , htmlMin);
+    watch('src/sass/**/*.scss' , cssTasks);
+    watch('src/js/*.js' , minifyJs);   
+    watch('src/images/*' , imageOpti);   
     cb();
 }
 
-exports.production = series(htmlMin,imageOpti,minifyJs,cssTasks);
-exports.development = series(cssTasks , defaultTask);
-
-exports.default = series(this.development,this.production);
+exports.default = series(htmlMin,imageOpti,minifyJs,cssTasks,defaultTask);
 

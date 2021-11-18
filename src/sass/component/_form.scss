@@ -2,10 +2,10 @@
     font-size: 15px;
     line-height: 26px;
     letter-spacing: 0.19px;
-    color: #ffffff;
+    color: $color-white;
     padding: 10px 46px;
     border: none;
-    background-color: #c71222;
+    background-color: $color-red;
     border-radius: 25px;
     &:hover{
         cursor: pointer;
@@ -19,19 +19,19 @@ form{
     }
     input{
         background-color: transparent;
-        border: 2px solid #ffffff;
+        border: 2px solid $color-white;
         border-top: none;
         border-left: none;
         border-right: none;
         width: 100%;
         padding: 25px 0 10px;
         margin-bottom: 16px;
-        color:#ffffff;
+        color:$color-white;
         &::placeholder{
             font-size: 15px;
             line-height: 26px;
             letter-spacing: 0.5px;
-            color: #ffffff;
+            color: $color-white;
             font-family: "Proxima Nova";
         }
         &:focus{
@@ -40,20 +40,23 @@ form{
     }
     textarea{
         background-color: transparent;
-        border: 2px solid #ffffff;
+        border: 2px solid $color-white;
         border-top: none;
         border-left: none;
         border-right: none;
         width: 100%;
-        color:#ffffff;
+        color:$color-white;
         resize: vertical;
         max-height: 320px;
         min-height: 120px;
+        @media screen and (max-width:$xl) {
+            min-height: 175px;
+        }
         &::placeholder{
             font-size: 15px;
             line-height: 26px;
             letter-spacing: 0.5px;
-            color: #ffffff;
+            color: $color-white;
             font-family: "Proxima Nova";
         }
         &:focus{

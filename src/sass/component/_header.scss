@@ -10,7 +10,7 @@
     transition: all 0.5s ease-out;
     z-index: 1;
     .logo {
-        color: $secondary;
+        color: $primary;
         font-size: 20px;
         font-weight: 400;
         display: inline-block;
@@ -21,7 +21,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            background-color: $color-pink;
+            background-color: $color-red;
             height: 100vh;
             width: 320px;
             transform: translateX(100%);
@@ -38,28 +38,28 @@
         }
         &.active{
             a{
-                color: $color-pink;
+                color: $color-red;
             }
         }
         a{
             font-size: 16px;
             font-weight: 400;
             letter-spacing: 0.5px;
-            color: $color-grey;
+            color: $color-grey-darker;
             &:hover{
-                color: $color-pink;
+                color: $color-red;
             }
         }
         @media screen and (max-width : $md){
             a{
                 color: $primary;
                 &:hover{
-                    color: $secondary;
+                    color: $primary;
                 }
             }
             &.active{
                 a{
-                    color: $secondary;
+                    color: $primary;
                 }
             }
             margin: 20px 22px;
@@ -86,36 +86,36 @@
         }
     }
     &.add-bg{
-        background-color: $secondary;
+        background-color: $primary;
         .logo{
-            color: $primary;
+            color: $color-white;
         }
         .nav-bar__items{
             a{
-                color: $primary;
+                color: $color-white;
                 &:hover{
-                    color: $color-pink;
+                    color: $color-red;
                 }
             }
             &.active{
                 a{
-                    color: $color-pink;
+                    color: $color-red;
                 }
             }
         }
         @media screen and (max-width : $md){
             [class*="line"]{
-                background-color: $primary;
+                background-color: $color-white;
             }
             .nav-bar__items{
                 &.active{
                     a{
-                        color: $secondary;
+                        color: $primary;
                     }
                 }
                 a{
                     &:hover{
-                        color: $secondary;
+                        color: $primary;
                     }
                 }
             }
@@ -125,6 +125,16 @@
         &.show-on-mobile{
             .nav-bar__links{
                 transform: translate(0);
+                .nav-bar__items{
+                    &.active{
+                        a{
+                            color: $primary;
+                        }
+                    }
+                    a{
+                        color: $color-white;
+                    }
+                }
             }
             .burger{    
                 .line1{
@@ -141,13 +151,13 @@
                 }
             }
             [class*="line"]{
-                background-color: $primary;
+                background-color: $color-white;
             }
         }
         [class*="line"]{
             width: 25px;
             height: 3px;
-            background-color: $secondary;
+            background-color: $primary;
             margin: 5px;
         }
     }
