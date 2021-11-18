@@ -1,6 +1,5 @@
 function lazyload(){
     const targets = document.querySelectorAll('img');
-    
     const io = new IntersectionObserver((entires, observer) => {
         entires.forEach(entry => {
             if(!entry.isIntersecting){
@@ -8,6 +7,11 @@ function lazyload(){
             }
             const src = entry.target.getAttribute('data-src');
             entry.target.setAttribute("src", src);
+            console.log(entry.target);
+            entry.target.addEventListener('error', function () {
+                const fallbackSrc = this.getAttribute("data-fallback");
+                this.setAttribute("src", fallbackSrc);
+            })
             entry.target.classList.add('fadein');
             observer.unobserve(entry.target);
         });

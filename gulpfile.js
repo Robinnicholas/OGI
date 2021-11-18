@@ -11,13 +11,17 @@ const { watch, series, parallel } = require('gulp');
 
 function imageOpti(cb){
     gulp.src('src/images/*')
-        .pipe(webp())                                   // webp conversion
         .pipe(image())                                  // img optimization
         .pipe(gulp.dest('dist/images'));
     cb();
 }
 
-exports.webpc =  imageOpti;
+function webpConversion(cb){
+    gulp.src('src/images/*')
+    .pipe(webp())                                   // webp conversion
+    .pipe(gulp.dest('dist/images'));
+    cb();
+}
 
 function htmlMin(cb){
     gulp.src('src/*.html')
@@ -56,5 +60,5 @@ function defaultTask(cb) {
     cb();
 }
 
-exports.default = series(htmlMin,imageOpti,minifyJs,cssTasks,defaultTask);
+exports.default = series(htmlMin,imageOpti,webpConversion,minifyJs,cssTasks,defaultTask);
 

@@ -1,7 +1,8 @@
 @font-face {
     font-family: Proxima Nova;
 	src: url("//db.onlinewebfonts.com/t/0376a58122a881d16a294512d3c947b1.woff2") 
-		format("woff2"),
+		format("woff2");
+    font-display: swap;
 }
 .sub-heading{
     font-size: 28px;

@@ -57,7 +57,7 @@
 
 .bg-img-working {
     right: 0;
-    background: url('../images/working.webp') no-repeat;
+    background: url('../images/working.webp'),url('../images/working.jpg') no-repeat;
 }
 
 // story
@@ -579,7 +579,7 @@
 
 .bg-img-hiring {
     left: 0;
-    background: url('../images/discussion.webp') no-repeat;
+    background: url('../images/discussion.webp'), url('../images/discussion.jpg') no-repeat;
 }
 
 // contact
