@@ -57,7 +57,17 @@
 
 .bg-img-working {
     right: 0;
-    background: url('../images/working.webp'),url('../images/working.jpg') no-repeat;
+    background-image: url('../images/working.jpg');
+    background-image: 
+        image-set(
+            url('../images/working.webp') 1x,
+            url('../images/working@2x.webp') 2x,
+            url('../images/working@3x.webp') 3x,
+            url('../images/working.jpg') 1x,
+            url('../images/working@2x.jpg') 2x,
+            url('../images/working@3x.jpg') 3x
+        );
+    background-repeat: no-repeat;
 }
 
 // story
@@ -579,7 +589,17 @@
 
 .bg-img-hiring {
     left: 0;
-    background: url('../images/discussion.webp'), url('../images/discussion.jpg') no-repeat;
+    background-image: url('../images/discussion.jpg');
+    background-image: 
+    image-set(
+        url('../images/discussion.webp') 1x,
+        url('../images/discussion@2x.webp') 2x,
+        url('../images/discussion@3x.webp') 3x,
+        url('../images/discussion.jpg') 1x,
+        url('../images/discussion@2x.jpg') 2x,
+        url('../images/discussion@3x.jpg') 3x
+    );
+    background-repeat: no-repeat;
 }
 
 // contact

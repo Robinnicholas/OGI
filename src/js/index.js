@@ -1,5 +1,7 @@
 function lazyload(){
-    const targets = document.querySelectorAll('img');
+    const images = document.querySelectorAll('img');
+    const iframes = document.querySelectorAll('iframe');
+    const targets = [...images,...iframes]; 
     const io = new IntersectionObserver((entires, observer) => {
         entires.forEach(entry => {
             if(!entry.isIntersecting){
@@ -7,11 +9,6 @@ function lazyload(){
             }
             const src = entry.target.getAttribute('data-src');
             entry.target.setAttribute("src", src);
-            console.log(entry.target);
-            entry.target.addEventListener('error', function () {
-                const fallbackSrc = this.getAttribute("data-fallback");
-                this.setAttribute("src", fallbackSrc);
-            })
             entry.target.classList.add('fadein');
             observer.unobserve(entry.target);
         });
@@ -19,6 +16,25 @@ function lazyload(){
 
     targets.forEach(target => {
         io.observe(target);
+    });
+}
+
+
+function lazyloadBg(){
+    const bgImages = document.querySelectorAll('.bg-img');
+    const io = new IntersectionObserver((entires, observer) => {
+        entires.forEach(entry => {
+            if(!entry.isIntersecting){
+                return;
+            }
+            const className = entry.target.getAttribute('data-class');
+            entry.target.classList.add(className);
+            observer.unobserve(entry.target);
+        });
+    });
+
+    bgImages.forEach(bgImage => {
+        io.observe(bgImage);
     });
 }
 
@@ -97,4 +113,5 @@ window.addEventListener('load', () => {
     progress();
     textAnimation();
     lazyload();
+    lazyloadBg();
 })
