@@ -10,7 +10,7 @@
     transition: all 0.5s ease-out;
     z-index: 1;
     .logo {
-        color: $primary;
+        color: $color-primary;
         font-size: 20px;
         font-weight: 400;
         display: inline-block;
@@ -21,7 +21,7 @@
             position: absolute;
             top: 0;
             right: 0;
-            background-color: $color-red;
+            background-color: $color-primary;
             height: 100vh;
             width: 320px;
             transform: translateX(100%);
@@ -52,14 +52,14 @@
         }
         @media screen and (max-width : $md){
             a{
-                color: $primary;
+                color: $color-primary;
                 &:hover{
-                    color: $primary;
+                    color: $color-primary;
                 }
             }
             &.active{
                 a{
-                    color: $primary;
+                    color: $color-primary;
                 }
             }
             margin: 20px 22px;
@@ -86,7 +86,7 @@
         }
     }
     &.add-bg{
-        background-color: $primary;
+        background-color: $color-primary;
         .logo{
             color: $color-white;
         }
@@ -110,12 +110,12 @@
             .nav-bar__items{
                 &.active{
                     a{
-                        color: $primary;
+                        color: $color-primary;
                     }
                 }
                 a{
                     &:hover{
-                        color: $primary;
+                        color: $color-primary;
                     }
                 }
             }
@@ -128,11 +128,14 @@
                 .nav-bar__items{
                     &.active{
                         a{
-                            color: $primary;
+                            color: $color-red;
                         }
                     }
                     a{
                         color: $color-white;
+                        &:hover{
+                            color: $color-red;       
+                        }
                     }
                 }
             }
@@ -157,7 +160,7 @@
         [class*="line"]{
             width: 25px;
             height: 3px;
-            background-color: $primary;
+            background-color: $color-primary;
             margin: 5px;
         }
     }

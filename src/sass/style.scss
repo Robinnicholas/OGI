@@ -2,12 +2,10 @@
 @import 'base/typography';
 @import 'base/reset';
 @import 'component/container';
-@import 'utilities/keyframes';
+@import 'utilities/animations';
 @import 'utilities/placeholders';
 @import 'component/form';
-@import 'layout/mixins';
-
 
 @import 'component/header';
-@import 'component/home';
+@import 'pages/home';
     

@@ -19,6 +19,7 @@ function imageOpti(cb){
 function webpConversion(cb){
     gulp.src('src/images/*')
     .pipe(webp())                                   // webp conversion
+    .pipe(gulp.dest('src/images/'))
     .pipe(gulp.dest('dist/images'));
     cb();
 }

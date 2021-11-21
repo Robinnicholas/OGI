@@ -49,6 +49,7 @@ form{
         resize: vertical;
         max-height: 320px;
         min-height: 120px;
+        padding-bottom: 70px;
         @media screen and (max-width:$xl) {
             min-height: 175px;
         }
